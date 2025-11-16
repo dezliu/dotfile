@@ -10,3 +10,8 @@ cdf() {
         echo "错误: 未找到打开的Finder窗口。" >&2
     fi
 }
+
+# 终端开启vim模式
+set -o vi
+
+
