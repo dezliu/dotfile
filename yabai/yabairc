@@ -61,7 +61,8 @@ yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
 
 # ===== Rules ==================================
-
+# 系统设置 -> 桌面与程序坞 -> 切换至应用程序时，切换至含有应用程序打开窗口的空间 -> 关闭
+# setting -> Desktop & Docker -> When switch to an application, switch to a space when open application on the window -> off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
 yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="macfeh" app="^macfeh$" manage=off
