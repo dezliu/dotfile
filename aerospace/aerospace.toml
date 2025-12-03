@@ -219,6 +219,7 @@ on-mode-changed = []
     cmd-shift-l = ['join-with right', 'mode main']
 
 # 配置指定软件打开在指定工作空间
+# 可以通过在终端执行 `aerospace list-apps` 查看当前打开的所有app的app-id
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
 run = "move-node-to-workspace 1"
