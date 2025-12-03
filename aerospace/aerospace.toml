@@ -20,9 +20,11 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 # See: https://nikitabobko.github.io/AeroSpace/guide#layouts
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
+# 手风琴模式间距
 accordion-padding = 30
 
 # Possible values: tiles|accordion
+# 默认平铺模式
 default-root-container-layout = 'tiles'
 
 # Possible values: horizontal|vertical|auto
@@ -113,9 +115,9 @@ on-mode-changed = []
     # '''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-    # command + / 切换垂直水平布局
+    # command + / 平铺模式切换垂直水平布局
     cmd-slash = 'layout tiles horizontal vertical'
-    # command + , 切换手风琴模式
+    # command + ,手风琴模式切换垂直水平布局
     cmd-comma = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -225,9 +227,10 @@ run = "move-node-to-workspace 1"
 if.app-id = 'dev.warp.Warp-Stable'
 run = "move-node-to-workspace 1"
 
+# idea 默认在桌面2打开，并启用手风琴垂直布局
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.intellij.ce'
-run = "move-node-to-workspace 2"
+run = ['move-node-to-workspace 2', 'layout accordion vertical']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
@@ -282,4 +285,7 @@ run = "layout floating"
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
 run = "layout floating"
+
+# [workspace_rules]
+# "2" = { layout = "accordion" }
 
