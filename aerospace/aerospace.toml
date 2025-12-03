@@ -10,6 +10,7 @@ config-version = 2
 after-startup-command = []
 
 # Start AeroSpace at login
+# 开机自启
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
@@ -34,7 +35,9 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
 # See https://nikitabobko.github.io/AeroSpace/commands#move-mouse
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
+# 切换屏幕时鼠标移动过去
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+# 切换窗口时，鼠标移动到对应窗口中心
 on-focus-changed = "move-mouse window-lazy-center"
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
@@ -47,8 +50,7 @@ automatically-unhide-macos-hidden-apps = false
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
 persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "B", 
-                         "E", "G", "I", "M", "N", "O",
-                         "P", "Q", "R", "T", "U", "V", "W"]
+                         "E", "G", "I", "O", "P", "R", "T", "U", "W"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -68,6 +70,7 @@ on-mode-changed = []
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See:
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+# 窗口间距配置
 [gaps]
     inner.horizontal = 10
     inner.vertical =   10
@@ -110,26 +113,32 @@ on-mode-changed = []
     # '''
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
+    # command + / 切换垂直水平布局
     cmd-slash = 'layout tiles horizontal vertical'
+    # command + , 切换手风琴模式
     cmd-comma = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
+    # 窗口间移动焦点
     cmd-h = 'focus left'
     cmd-j = 'focus down'
     cmd-k = 'focus up'
     cmd-l = 'focus right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
+    # 移动窗口位置
     cmd-shift-h = 'move left'
     cmd-shift-j = 'move down'
     cmd-shift-k = 'move up'
     cmd-shift-l = 'move right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
+    # 调整窗口大小
     cmd-minus = 'resize smart -50'
     cmd-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
+    # 切换到指定工作空间
     cmd-1 = 'workspace 1'
     cmd-2 = 'workspace 2'
     cmd-3 = 'workspace 3'
@@ -148,6 +157,7 @@ on-mode-changed = []
     cmd-u = 'workspace U'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
+    # 将聚焦窗口移动到指定工作空间
     cmd-shift-1 = 'move-node-to-workspace 1'
     cmd-shift-2 = 'move-node-to-workspace 2'
     cmd-shift-3 = 'move-node-to-workspace 3'
@@ -167,15 +177,26 @@ on-mode-changed = []
 
     cmd-shift-f = 'fullscreen'
 
+    # 将聚焦窗口移动到指定工作空间，并聚焦过去
     alt-cmd-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
     alt-cmd-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
+    alt-cmd-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
+    alt-cmd-shift-4 = ['move-node-to-workspace 4', 'workspace 4']
+    alt-cmd-shift-5 = ['move-node-to-workspace 5', 'workspace 5']
+    alt-cmd-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
+    alt-cmd-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
+    alt-cmd-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
+    alt-cmd-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
+    alt-cmd-shift-0 = ['move-node-to-workspace 0', 'workspace 0']
+    alt-cmd-shift-b = ['move-node-to-workspace b', 'workspace b']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-    cmd-tab = 'workspace-back-and-forth'
+    alt-tab = 'workspace-back-and-forth'
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
     cmd-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
+    # command + shift + ; 切换到 service 模式
     cmd-shift-semicolon = 'mode service'
 
 # 'service' binding mode declaration.
@@ -189,12 +210,13 @@ on-mode-changed = []
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
     #s = ['layout sticky tiling', 'mode main']
 
+    # 将当前窗口与上下左右窗口合并父容器
     cmd-shift-h = ['join-with left', 'mode main']
     cmd-shift-j = ['join-with down', 'mode main']
     cmd-shift-k = ['join-with up', 'mode main']
     cmd-shift-l = ['join-with right', 'mode main']
 
-# 配置指定软件打开桌面
+# 配置指定软件打开在指定工作空间
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
 run = "move-node-to-workspace 1"
