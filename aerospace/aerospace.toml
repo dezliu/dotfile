@@ -72,8 +72,8 @@ on-mode-changed = []
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 # 窗口间距配置
 [gaps]
-    inner.horizontal = 10
-    inner.vertical =   10
+    inner.horizontal = 4
+    inner.vertical =   4
     outer.left =       0
     outer.bottom =     0
     outer.top =        0
