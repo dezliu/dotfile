@@ -270,8 +270,11 @@ run = "move-node-to-workspace 8"
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.edgemac'
-run = "move-node-to-workspace b"
+run = ['move-node-to-workspace B', 'layout accordion vertical']
 
+[[on-window-detected]]
+if.app-id = 'org.mozilla.firefox'
+run = ['move-node-to-workspace B', 'layout accordion vertical']
 
 # 配置指定软件浮动
 [[on-window-detected]]

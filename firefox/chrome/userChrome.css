@@ -1,0 +1,20 @@
+/*
+🔧 Firefox 详细操作步骤
+您可以通过修改Firefox的用户样式表来隐藏所有窗口按钮，以下是具体步骤：
+    启用 userChrome.css 支持
+        在Firefox地址栏输入 about:config 并回车，确认风险后继续。
+        搜索 toolkit.legacyUserProfileCustomizations.stylesheets 项，将其值从 false 改为 true
+创建并编辑样式文件
+    在地址栏输入 about:support 并回车，点击“打开文件夹”找到您的配置文件夹。
+    在该文件夹下，新建一个名为 chrome 的文件夹。
+    进入 chrome 文件夹，新建一个名为 userChrome.css 的文本文件。
+    用文本编辑器打开此文件，添加以下核心代码并保存(此文件内容)
+重启生效
+*/
+.titlebar-buttonbox-container {
+  display: none !important;
+}
+/* 可选：隐藏按钮消失后留下的空白区域 */
+.titlebar-spacer[type="post-tabs"] {
+  display: none !important;
+}
