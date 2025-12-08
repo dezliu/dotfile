@@ -74,12 +74,12 @@ on-mode-changed = []
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 # 窗口间距配置
 [gaps]
-    inner.horizontal = 4
-    inner.vertical =   4
-    outer.left =       4 
-    outer.bottom =     4
-    outer.top =        4
-    outer.right =      4
+    inner.horizontal = 5
+    inner.vertical =   5
+    outer.left =       5 
+    outer.bottom =     5
+    outer.top =        5
+    outer.right =      5
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -139,6 +139,11 @@ on-mode-changed = []
     cmd-minus = 'resize smart -50'
     cmd-equal = 'resize smart +50'
 
+    ctrl-cmd-h = 'resize width -50'
+    ctrl-cmd-l = 'resize width +50'
+    ctrl-cmd-k = 'resize height -50'
+    ctrl-cmd-j = 'resize height +50'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     # 切换到指定工作空间
     cmd-1 = 'workspace 1'
@@ -152,9 +157,6 @@ on-mode-changed = []
     cmd-9 = 'workspace 9'
     cmd-b = 'workspace B'
     cmd-e = 'workspace E'
-    cmd-g = 'workspace G'
-    cmd-i = 'workspace I'
-    cmd-o = 'workspace O'
     cmd-u = 'workspace U'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
@@ -170,9 +172,6 @@ on-mode-changed = []
     cmd-shift-9 = 'move-node-to-workspace 9'
     cmd-shift-b = 'move-node-to-workspace B'
     cmd-shift-e = 'move-node-to-workspace E'
-    cmd-shift-g = 'move-node-to-workspace G'
-    cmd-shift-i = 'move-node-to-workspace I'
-    cmd-shift-o = 'move-node-to-workspace O'
     cmd-shift-u = 'move-node-to-workspace U'
 
     # 将聚焦窗口移动到指定工作空间，并聚焦过去
@@ -195,18 +194,29 @@ on-mode-changed = []
 
     cmd-shift-space = 'fullscreen'
 
+    # 临时关闭 aerospace 窗口管理，改为mac的窗口管理
+    cmd-backtick = 'enable toggle'
+
+    # cmd-enter = 'exec-and-forget open -n -a /Applications/Kitty.app/Contents/MacOS/kitty'
+    cmd-enter = 'exec-and-forget open -n -a Kitty'
+
+    # 切换为macug原生全屏
+    cmd-shift-f = ['macos-native-fullscreen']
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     # command + shift + ; 切换到 service 模式
     cmd-shift-semicolon = 'mode service'
+    # command + shift + c 切换到 volume 模式
+    cmd-shift-v = 'mode volume'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
+    enter = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree', 'mode main'] # reset layout
     f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
     backspace = ['close-all-windows-but-current', 'mode main']
-    cmd-shift-f = 'fullscreen'
 
     # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
     #s = ['layout sticky tiling', 'mode main']
@@ -216,6 +226,16 @@ on-mode-changed = []
     cmd-shift-j = ['join-with down', 'mode main']
     cmd-shift-k = ['join-with up', 'mode main']
     cmd-shift-l = ['join-with right', 'mode main']
+
+[mode.volume.binding]
+    esc = 'mode main'
+    enter = 'mode main'
+    k = 'volume up --no-gui'
+    j = 'volume down --no-gui'
+    m = 'volume mute-toggle --no-gui'
+    cmd-k = 'volume up'
+    cmd-j = 'volume down'
+    cmd-m = 'volume mute-toggle'
 
 # 配置指定软件打开在指定工作空间
 # 可以通过在终端执行 `aerospace list-apps` 查看当前打开的所有app的app-id
