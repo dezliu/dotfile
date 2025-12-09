@@ -41,6 +41,7 @@ default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # 切换窗口时，鼠标移动到对应窗口中心
 on-focus-changed = "move-mouse window-lazy-center"
+# exec-on-workspace-change = ['move-mouse window-lazy-center']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -197,17 +198,20 @@ on-mode-changed = []
     # 临时关闭 aerospace 窗口管理，改为mac的窗口管理
     cmd-backtick = 'enable toggle'
 
+    # cmd-shift-w = ['close', 'focus-back-and-forth']
+
     # cmd-enter = 'exec-and-forget open -n -a /Applications/Kitty.app/Contents/MacOS/kitty'
     cmd-enter = 'exec-and-forget open -n -a Kitty'
 
     # 切换为macug原生全屏
-    cmd-shift-f = ['macos-native-fullscreen']
+    # cmd-shift-f = ['macos-native-fullscreen']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     # command + shift + ; 切换到 service 模式
     cmd-shift-semicolon = 'mode service'
     # command + shift + c 切换到 volume 模式
     cmd-shift-v = 'mode volume'
+    cmd-shift-m = 'mode monitor'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -236,6 +240,27 @@ on-mode-changed = []
     cmd-k = 'volume up'
     cmd-j = 'volume down'
     cmd-m = 'volume mute-toggle'
+
+[mode.monitor.binding]
+    esc = 'mode main'
+    enter = 'mode main'
+    l = 'focus-monitor right'
+    h = 'focus-monitor left'
+    k = 'focus-monitor up'
+    j = 'focus-monitor down'
+    cmd-l = 'move-workspace-to-monitor right'
+    cmd-h = 'move-workspace-to-monitor left'
+    cmd-k = 'move-workspace-to-monitor up'
+    cmd-j = 'move-workspace-to-monitor down'
+    cmd-shift-l = ['move-workspace-to-monitor right', 'mode main']
+    cmd-shift-h = ['move-workspace-to-monitor left', 'mode main']
+    cmd-shift-k = ['move-workspace-to-monitor up', 'mode main']
+    cmd-shift-j = ['move-workspace-to-monitor down', 'mode main']
+
+# 显示器配置
+[workspace-to-monitor-force-assignment]
+    # 当只有一个外接显示器时，secondary，指的是非主显示器，这里是把 workspace B 默认分配给外接显示器
+    B = 'secondary'
 
 # 配置指定软件打开在指定工作空间
 # 可以通过在终端执行 `aerospace list-apps` 查看当前打开的所有app的app-id
@@ -325,6 +350,7 @@ run = "layout floating"
 if.app-id = 'jp.fuji.1PiecePreferences'
 run = "layout floating"
 
-# [workspace_rules]
-# "2" = { layout = "accordion" }
+[[on-window-detected]]
+if.app-id = 'com.colliderli.iina'
+run = "layout floating"
 
