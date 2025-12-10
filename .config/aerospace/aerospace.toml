@@ -7,7 +7,16 @@ config-version = 2
 
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = []
+after-startup-command = [
+    # 启动后，启用 borders 软件，给激活窗口添加边框，需要安装 broders.
+    # brew tap FelixKratz/formulae
+    # brew install borders
+    # https://github.com/FelixKratz/JankyBorders
+    # JankyBorders has a built-in detection of already running process,
+    # so it won't be run twice on AeroSpace restart
+    # 'exec-and-forget borders active_color=0xffe1e3e4 width=5.0'
+    'exec-and-forget borders active_color=0xffeff0f0 width=5.0'
+]
 
 # Start AeroSpace at login
 # 开机自启
@@ -41,7 +50,7 @@ default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 # 切换窗口时，鼠标移动到对应窗口中心
 on-focus-changed = "move-mouse window-lazy-center"
-# exec-on-workspace-change = ['move-mouse window-lazy-center']
+exec-on-workspace-change = ['move-mouse window-lazy-center']
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -74,12 +83,12 @@ on-mode-changed = []
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 # 窗口间距配置
 [gaps]
-    inner.horizontal = 5
-    inner.vertical =   5
-    outer.left =       5 
-    outer.bottom =     5
-    outer.top =        5
-    outer.right =      5
+    inner.horizontal = 7
+    inner.vertical =   7
+    outer.left =       7 
+    outer.bottom =     7
+    outer.top =        7
+    outer.right =      7
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
