@@ -52,8 +52,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "B", 
-                         "E", "G", "I", "O", "P", "R", "T", "U", "W"]
+persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "B", "E", "U"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -261,6 +260,7 @@ on-mode-changed = []
 [workspace-to-monitor-force-assignment]
     # 当只有一个外接显示器时，secondary，指的是非主显示器，这里是把 workspace B 默认分配给外接显示器
     B = 'secondary'
+    9 = 'secondary'
 
 # 配置指定软件打开在指定工作空间
 # 可以通过在终端执行 `aerospace list-apps` 查看当前打开的所有app的app-id
@@ -300,6 +300,10 @@ run = "move-node-to-workspace 3"
 [[on-window-detected]]
 if.app-id = 'abnerworks.Typora'
 run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
+if.app-id = 'com.ScooterSoftware.BeyondCompare'
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.parallels.desktop.console'
