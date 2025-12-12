@@ -358,7 +358,7 @@ if.app-id = 'com.apple.finder'
 run = "layout floating"
 
 [[on-window-detected]]
-if.app-id = 'com.nektony.App-Cleaner-SIII'
+if.app-id = 'com.alienator88.Pearcleaner'
 run = "layout floating"
 
 [[on-window-detected]]
