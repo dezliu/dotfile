@@ -242,6 +242,7 @@ on-mode-changed = []
 [mode.volume.binding]
     esc = 'mode main'
     enter = 'mode main'
+    space = 'mode main'
     k = 'volume up --no-gui'
     j = 'volume down --no-gui'
     m = 'volume mute-toggle --no-gui'
@@ -252,10 +253,15 @@ on-mode-changed = []
 [mode.monitor.binding]
     esc = 'mode main'
     enter = 'mode main'
+    space = 'mode main'
     l = 'focus-monitor right'
     h = 'focus-monitor left'
     k = 'focus-monitor up'
     j = 'focus-monitor down'
+    shift-l = ['focus-monitor right', 'mode main']
+    shift-h = ['focus-monitor left', 'mode main']
+    shift-k = ['focus-monitor up', 'mode main']
+    shift-j = ['focus-monitor down', 'mode main']
     cmd-l = 'move-workspace-to-monitor right'
     cmd-h = 'move-workspace-to-monitor left'
     cmd-k = 'move-workspace-to-monitor up'
