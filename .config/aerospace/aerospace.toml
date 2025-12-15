@@ -129,6 +129,9 @@ on-mode-changed = []
     # command + ,手风琴模式切换垂直水平布局
     cmd-comma = 'layout accordion horizontal vertical'
 
+    # 配置后，替换mac自带的cmd-w，关闭浮动窗口后，可以自动选择ta其他窗口激活焦点
+    cmd-w = 'close'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
     # 窗口间移动焦点
     cmd-h = 'focus left'
