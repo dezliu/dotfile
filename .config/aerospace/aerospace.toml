@@ -252,6 +252,16 @@ on-mode-changed = []
     cmd-k = 'volume up'
     cmd-j = 'volume down'
     cmd-m = 'volume mute-toggle'
+    cmd-0 = 'volume set 0'
+    cmd-1 = 'volume set 10'
+    cmd-2 = 'volume set 20'
+    cmd-3 = 'volume set 30'
+    cmd-4 = 'volume set 40'
+    cmd-5 = 'volume set 50'
+    cmd-6 = 'volume set 60'
+    cmd-7 = 'volume set 70'
+    cmd-8 = 'volume set 80'
+    cmd-9 = 'volume set 90'
 
 [mode.monitor.binding]
     esc = 'mode main'
