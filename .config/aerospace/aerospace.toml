@@ -198,6 +198,8 @@ on-mode-changed = []
     alt-cmd-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
     alt-cmd-shift-0 = ['move-node-to-workspace 0', 'workspace 0']
     alt-cmd-shift-b = ['move-node-to-workspace b', 'workspace b']
+    alt-cmd-shift-e = ['move-node-to-workspace e', 'workspace e']
+    alt-cmd-shift-u = ['move-node-to-workspace u', 'workspace u']
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
@@ -306,28 +308,28 @@ run = "move-node-to-workspace 1"
 
 # idea 默认在桌面2打开，并启用手风琴垂直布局
 [[on-window-detected]]
-if.app-id = 'com.jetbrains.intellij.ce'
+if.app-id = 'com.jetbrains.intellij'
 run = ['move-node-to-workspace 2', 'layout accordion vertical']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
-run = "move-node-to-workspace 3"
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.coteditor.CotEditor'
-run = "move-node-to-workspace 3"
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Excel'
-run = "move-node-to-workspace 3"
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.Word'
-run = "move-node-to-workspace 3"
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'abnerworks.Typora'
-run = "move-node-to-workspace 3"
+run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.ScooterSoftware.BeyondCompare'
@@ -351,7 +353,7 @@ run = "move-node-to-workspace 8"
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.edgemac'
-run = ['move-node-to-workspace B', 'layout accordion vertical']
+run = ['move-node-to-workspace E', 'layout accordion vertical']
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
