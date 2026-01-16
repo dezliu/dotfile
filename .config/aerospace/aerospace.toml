@@ -15,7 +15,7 @@ after-startup-command = [
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     # 'exec-and-forget borders active_color=0xffe1e3e4 width=5.0'
-    'exec-and-forget borders active_color=0xffeff0f0 width=5.0'
+    'exec-and-forget borders active_color=0xffeff0f0 width=6.0'
 ]
 
 # Start AeroSpace at login
@@ -61,7 +61,7 @@ automatically-unhide-macos-hidden-apps = false
 # even when they are invisible.
 # This config version is only available since 'config-version = 2'
 # Fallback value (if you omit the key): persistent-workspaces = []
-persistent-workspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "B", "E", "U"]
+persistent-workspaces = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "B", "E", "U"]
 
 # A callback that runs every time binding mode changes
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -83,12 +83,12 @@ on-mode-changed = []
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 # 窗口间距配置
 [gaps]
-    inner.horizontal = 7
-    inner.vertical =   7
-    outer.left =       7
-    outer.bottom =     7
-    outer.top =        7
-    outer.right =      7
+    inner.horizontal = 9
+    inner.vertical =   9
+    outer.left =       9
+    outer.bottom =     9
+    outer.top =        9
+    outer.right =      9
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -158,6 +158,7 @@ on-mode-changed = []
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     # 切换到指定工作空间
+    cmd-0 = 'workspace 0'
     cmd-1 = 'workspace 1'
     cmd-2 = 'workspace 2'
     cmd-3 = 'workspace 3'
@@ -173,6 +174,7 @@ on-mode-changed = []
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     # 将聚焦窗口移动到指定工作空间
+    cmd-shift-0 = 'move-node-to-workspace 0'
     cmd-shift-1 = 'move-node-to-workspace 1'
     cmd-shift-2 = 'move-node-to-workspace 2'
     cmd-shift-3 = 'move-node-to-workspace 3'
@@ -187,6 +189,7 @@ on-mode-changed = []
     cmd-shift-u = 'move-node-to-workspace U'
 
     # 将聚焦窗口移动到指定工作空间，并聚焦过去
+    alt-cmd-shift-0 = ['move-node-to-workspace 0', 'workspace 0']
     alt-cmd-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
     alt-cmd-shift-2 = ['move-node-to-workspace 2', 'workspace 2']
     alt-cmd-shift-3 = ['move-node-to-workspace 3', 'workspace 3']
@@ -196,7 +199,6 @@ on-mode-changed = []
     alt-cmd-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
     alt-cmd-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
     alt-cmd-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
-    alt-cmd-shift-0 = ['move-node-to-workspace 0', 'workspace 0']
     alt-cmd-shift-b = ['move-node-to-workspace b', 'workspace b']
     alt-cmd-shift-e = ['move-node-to-workspace e', 'workspace e']
     alt-cmd-shift-u = ['move-node-to-workspace u', 'workspace u']
@@ -296,20 +298,20 @@ on-mode-changed = []
 # 可以通过在终端执行 `aerospace list-apps` 查看当前打开的所有app的app-id
 [[on-window-detected]]
 if.app-id = 'com.googlecode.iterm2'
-run = "move-node-to-workspace 1"
+run = "move-node-to-workspace 0"
 
 [[on-window-detected]]
 if.app-id = 'net.kovidgoyal.kitty'
-run = "move-node-to-workspace 1"
+run = "move-node-to-workspace 0"
 
 [[on-window-detected]]
 if.app-id = 'dev.warp.Warp-Stable'
-run = "move-node-to-workspace 1"
+run = "move-node-to-workspace 0"
 
 # idea 默认在桌面2打开，并启用手风琴垂直布局
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.intellij'
-run = ['move-node-to-workspace 2', 'layout accordion vertical']
+run = ['move-node-to-workspace 1', 'layout accordion vertical']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
