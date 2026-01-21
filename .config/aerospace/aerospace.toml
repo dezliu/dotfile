@@ -129,7 +129,7 @@ on-mode-changed = []
     # command + ,手风琴模式切换垂直水平布局
     cmd-comma = 'layout accordion horizontal vertical'
 
-    # 配置后，替换mac自带的cmd-w，关闭浮动窗口后，可以自动选择ta其他窗口激活焦点
+    # 配置后，替换mac自带的cmd-w，关闭浮动窗口后，可以自动选择其他窗口激活焦点
     cmd-w = 'close'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -224,8 +224,9 @@ on-mode-changed = []
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     # command + shift + ; 切换到 service 模式
     cmd-shift-semicolon = 'mode service'
-    # command + shift + c 切换到 volume 模式
+    # command + shift + v 切换到 volume 模式
     cmd-shift-v = 'mode volume'
+    # command + shift + m 切换到 monitor 模式
     cmd-shift-m = 'mode monitor'
 
 # 'service' binding mode declaration.
@@ -290,9 +291,10 @@ on-mode-changed = []
 
 # 显示器配置
 [workspace-to-monitor-force-assignment]
-    # 当只有一个外接显示器时，secondary，指的是非主显示器，这里是把 workspace B 默认分配给外接显示器
-    B = 'secondary'
+    # 当只有一个外接显示器时，secondary，指的是非主显示器，这里是把 workspace [0, 9, B] 默认分配给外接显示器
+    0 = 'secondary'
     9 = 'secondary'
+    B = 'secondary'
 
 # 配置指定软件打开在指定工作空间
 # 可以通过在终端执行 `aerospace list-apps` 查看当前打开的所有app的app-id
