@@ -113,16 +113,6 @@ on-mode-changed = []
 
     # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
-    # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-    # You can uncomment the following lines to open up terminal with alt + enter shortcut
-    # (like in i3)
-    # alt-enter = '''exec-and-forget osascript -e '
-    # tell application "Terminal"
-    #     do script
-    #     activate
-    # end tell'
-    # '''
-
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
     # command + / 平铺模式切换垂直水平布局
     cmd-period = 'layout tiles horizontal vertical'
@@ -141,10 +131,10 @@ on-mode-changed = []
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move
     # 移动窗口位置
-    cmd-shift-h = 'move left'
-    cmd-shift-j = 'move down'
-    cmd-shift-k = 'move up'
-    cmd-shift-l = 'move right'
+    cmd-shift-h = 'swap left'
+    cmd-shift-j = 'swap down'
+    cmd-shift-k = 'swap up'
+    cmd-shift-l = 'swap right'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
     # 调整窗口大小
@@ -203,6 +193,21 @@ on-mode-changed = []
     alt-cmd-shift-e = ['move-node-to-workspace e', 'workspace e']
     alt-cmd-shift-u = ['move-node-to-workspace u', 'workspace u']
 
+    # 将worksapce召唤到当前显示器并显示
+    alt-0 = 'summon-workspace 0'
+    alt-1 = 'summon-workspace 1'
+    alt-2 = 'summon-workspace 2'
+    alt-3 = 'summon-workspace 3'
+    alt-4 = 'summon-workspace 4'
+    alt-5 = 'summon-workspace 5'
+    alt-6 = 'summon-workspace 6'
+    alt-7 = 'summon-workspace 7'
+    alt-8 = 'summon-workspace 8'
+    alt-9 = 'summon-workspace 9'
+    alt-b = 'summon-workspace b'
+    alt-e = 'summon-workspace e'
+    alt-u = 'summon-workspace u'
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
@@ -228,6 +233,7 @@ on-mode-changed = []
     cmd-shift-v = 'mode volume'
     # command + shift + m 切换到 monitor 模式
     cmd-shift-m = 'mode monitor'
+    cmd-shift-a = 'enable toggle'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -242,10 +248,14 @@ on-mode-changed = []
     #s = ['layout sticky tiling', 'mode main']
 
     # 将当前窗口与上下左右窗口合并父容器
-    cmd-shift-h = ['join-with left', 'mode main']
-    cmd-shift-j = ['join-with down', 'mode main']
-    cmd-shift-k = ['join-with up', 'mode main']
-    cmd-shift-l = ['join-with right', 'mode main']
+    cmd-shift-h = 'move left'
+    cmd-shift-j = 'move down'
+    cmd-shift-k = 'move up'
+    cmd-shift-l = 'move right'
+    cmd-h = ['join-with left', 'mode main']
+    cmd-j = ['join-with down', 'mode main']
+    cmd-k = ['join-with up', 'mode main']
+    cmd-l = ['join-with right', 'mode main']
 
 [mode.volume.binding]
     esc = 'mode main'
