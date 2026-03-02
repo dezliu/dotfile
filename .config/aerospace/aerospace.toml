@@ -234,7 +234,6 @@ on-mode-changed = []
     cmd-shift-v = 'mode volume'
     # command + shift + m 切换到 monitor 模式
     cmd-shift-m = 'mode monitor'
-    cmd-shift-a = 'enable toggle'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
