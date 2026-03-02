@@ -121,6 +121,7 @@ on-mode-changed = []
 
     # 配置后，替换mac自带的cmd-w，关闭浮动窗口后，可以自动选择其他窗口激活焦点
     cmd-w = 'close'
+    cmd-shift-w = 'close-all-windows-but-current'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
     # 窗口间移动焦点
@@ -402,9 +403,9 @@ run = "layout floating"
 if.app-id = 'jp.fuji.1PiecePreferences'
 run = "layout floating"
 
-[[on-window-detected]]
-if.app-id = 'com.colliderli.iina'
-run = "layout floating"
+# [[on-window-detected]]
+# if.app-id = 'com.colliderli.iina'
+# run = "layout floating"
 
 # 指定工作区排布模式(好像不生效)
 [[on-window-detected]]
