@@ -217,12 +217,11 @@ on-mode-changed = []
     cmd-shift-space = 'fullscreen'
 
     # 临时关闭 aerospace 窗口管理，改为mac的窗口管理
-    cmd-backtick = 'enable toggle'
+    # cmd-backtick = 'enable toggle'
 
     # cmd-shift-w = ['close', 'focus-back-and-forth']
 
-    # cmd-enter = 'exec-and-forget open -n -a /Applications/Kitty.app/Contents/MacOS/kitty'
-    cmd-enter = 'exec-and-forget open -n -a Kitty'
+    cmd-enter = 'exec-and-forget open -n -a Ghostty'
 
     # 切换为macug原生全屏
     # cmd-shift-f = ['macos-native-fullscreen']
@@ -329,7 +328,7 @@ if.app-id = 'com.googlecode.iterm2'
 run = "move-node-to-workspace 0"
 
 [[on-window-detected]]
-if.app-id = 'net.kovidgoyal.kitty'
+if.app-id = 'com.mitchellh.ghostty'
 run = "move-node-to-workspace 0"
 
 [[on-window-detected]]
@@ -364,6 +363,10 @@ run = "move-node-to-workspace 4"
 [[on-window-detected]]
 if.app-id = 'com.ScooterSoftware.BeyondCompare'
 run = "move-node-to-workspace 4"
+
+[[on-window-detected]]
+if.app-id = 'com.tencent.xinWeChat'
+run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = 'com.parallels.desktop.console'

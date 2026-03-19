@@ -3,7 +3,7 @@ font-size = 14
 adjust-cell-height = 2
 # --- Theme and Colors ---
 # theme = Catppuccin Mocha
-theme = GitHub-Dark-Default
+theme = GitHub Dark Colorblind
 # --- Window and Appearance ---
 background-opacity = 0.5
 # 作用：设置背景模糊半径（仅 macOS 支持）。当背景透明时，模糊可以使背景内容柔和，避免干扰文字。取值范围通常为 0~50，30 表示中等程度的模糊。
@@ -64,6 +64,8 @@ keybind = cmd+shift+enter=toggle_split_zoom
 # 绑定 Cmd+Shift+F 也执行同样的分屏缩放切换操作。这为用户提供了另一个快捷键选择，可能更方便记忆（F 代表 Fullscreen）。
 keybind = cmd+shift+f=toggle_split_zoom
 
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
 keybind = cmd+shift+,=reload_config
 # 自定义分屏焦点切换 (Vim 风格)
 keybind = alt+h=goto_split:left
@@ -74,3 +76,6 @@ keybind = cmd+c=copy_to_clipboard
 
 # window-decoration = none
 # gtk-titlebar = false
+
+# 不在Dock显示
+# macos-hidden = always
