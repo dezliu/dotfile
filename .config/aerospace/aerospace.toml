@@ -227,6 +227,22 @@ on-mode-changed = []
     # 切换为macug原生全屏
     # cmd-shift-f = ['macos-native-fullscreen']
 
+    # cmd-g 打开 safari 窗口
+    cmd-g = '''exec-and-forget osascript -e '
+    tell application "Safari"
+        make new document at end of documents
+        activate
+    end tell'
+    '''
+    # alt-g 打开safari隐私窗口
+    alt-g = '''exec-and-forget osascript -e '
+    tell application "Safari"
+        activate
+    end tell
+    delay 0.2
+    tell application "System Events" to keystroke "n" using {command down, shift down}
+    ' '''
+
     # See: https://nikitabobko.github.io/AeroSpace/commands#mode
     # command + shift + ; 切换到 service 模式
     cmd-shift-semicolon = 'mode service'
@@ -379,7 +395,24 @@ if.app-id = 'com.tencent.xinWeChat'
 run = "layout floating"
 
 [[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam'
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam.helper'
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = 'com.codeweavers.CrossOver'
+run = "layout floating"
+
+[[on-window-detected]]
 if.app-id = 'zbox-lite'
+run = "layout floating"
+
+
+[[on-window-detected]]
+if.app-id = 'com.jordanbaird.Ice'
 run = "layout floating"
 
 [[on-window-detected]]

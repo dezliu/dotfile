@@ -1,0 +1,69 @@
+font-size = 14
+# 调整单元格的高度。增加此值可以使行高变大，提升可读性。2 表示在默认行高的基础上额外增加 2 像素。这个值可以是正数或负数，用于微调行间距。
+adjust-cell-height = 2
+# --- Theme and Colors ---
+theme = Catppuccin Mocha
+# --- Window and Appearance ---
+background-opacity = 0.85
+# 作用：设置背景模糊半径（仅 macOS 支持）。当背景透明时，模糊可以使背景内容柔和，避免干扰文字。取值范围通常为 0~50，30 表示中等程度的模糊。
+background-blur-radius = 30
+# 仅 macOS 有效，设置标题栏样式为 transparent（透明）。其他可选值包括 hidden（隐藏标题栏和按钮）、tabs（标签页集成到标题栏）等。这里选择透明，可以保留交通灯按钮但背景与窗口融合。
+macos-titlebar-style = transparent
+# 设置窗口内容与左右边框的水平内边距为 10 像素。避免文字紧贴窗口边缘。
+window-padding-x = 10
+# 设置窗口内容与上下边框的垂直内边距为 8 像素
+window-padding-y = 8
+# 设置 Ghostty 在退出时保存窗口状态（如打开的分页、工作目录等），下次启动时恢复。always 表示总是保存。其他选项可能是 never 或 on-exit。
+window-save-state = always
+# 设置窗口主题跟随系统主题（浅色/深色）。auto 表示自动根据系统外观切换。可选 light 或 dark 强制指定。
+window-theme = auto
+# --- Cursor ---
+# 设置光标样式为竖线（bar）。其他常见样式有 block（方块）、underline（下划线）。
+cursor-style = bar
+# 启用光标闪烁。true 表示光标会按一定频率闪烁，false 则静止。
+cursor-style-blink = true
+# 设置光标透明度为 0.8（取值范围 0.0~1.0）。当光标为方块样式时，透明度效果明显；对于竖线，可能效果不明显，但可以微调。
+cursor-opacity = 0.8
+
+# --- Mouse ---
+# 当用户开始打字时自动隐藏鼠标指针，避免遮挡视线。停止打字或移动鼠标时指针重新出现。
+mouse-hide-while-typing = true
+# 当用鼠标选中文本时，自动将选中的内容复制到系统剪贴板。clipboard 表示复制到系统剪贴板（可用 Ctrl+V 粘贴）。也可设置为 selection（仅复制到主剪贴板，Linux 中可用鼠标中键粘贴）。
+copy-on-select = clipboard
+
+# --- Quick Terminal ---
+# 设置快速终端（可通过全局快捷键呼出的终端窗口）出现的位置。top 表示从屏幕顶部滑出。其他选项：bottom、left、right。
+quick-terminal-position = top
+# 设置快速终端显示在哪个屏幕。mouse 表示跟随鼠标所在的屏幕。你也可以指定 main 或屏幕编号。
+quick-terminal-screen = mouse
+# 当快速终端失去焦点时自动隐藏。如果设置为 false，则需要手动关闭。
+quick-terminal-autohide = true
+# 设置快速终端滑入/滑出动画的持续时间（秒）。0.15 表示 150 毫秒，快速且流畅。
+quick-terminal-animation-duration = 0.15
+
+# --- Security ---
+# 启用剪贴板粘贴保护。当应用程序试图读取剪贴板内容时，Ghostty 会询问是否允许，防止恶意网页或程序窃取剪贴板数据。
+clipboard-paste-protection = true
+# 启用括号粘贴模式的安全检查。括号粘贴模式可以让终端区分手动输入和粘贴内容，此设置进一步确保粘贴操作的安全性。
+clipboard-paste-bracketed-safe = true
+
+# --- Shell Integration ---
+# 启用针对 Zsh 的 Shell 集成功能。Ghostty 会注入一些代码到 shell 中，以支持命令结束通知、当前工作目录跟踪等功能。可选 bash、zsh、fish 等。
+shell-integration = zsh
+
+# --- Performance ---
+# 设置每个终端可保留的回滚行数上限为 2500 万行。较大的值可以让你回滚查看很久之前的输出，但会占用更多内存。默认值通常较小。
+scrollback-limit = 25000000
+
+# --- 基础分屏（左右添加屏幕）---
+# 绑定快捷键 Cmd+D 来创建一个新的分屏，并放置在当前分屏的右侧。new_split:right 表示新建分屏且位于右侧。其他方向：left、up、down。
+keybind = cmd+d=new_split:right
+# 绑定 Cmd+Shift+Enter 来切换当前分屏的缩放状态（即让当前分屏全屏，隐藏其他分屏）。再次按下恢复。
+keybind = cmd+shift+enter=toggle_split_zoom
+# 绑定 Cmd+Shift+F 也执行同样的分屏缩放切换操作。这为用户提供了另一个快捷键选择，可能更方便记忆（F 代表 Fullscreen）。
+keybind = cmd+shift+f=toggle_split_zoom
+
+keybind = cmd+shift+,=reload_config
+
+# window-decoration = none
+# gtk-titlebar = false
