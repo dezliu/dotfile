@@ -2,13 +2,14 @@ font-size = 14
 # 调整单元格的高度。增加此值可以使行高变大，提升可读性。2 表示在默认行高的基础上额外增加 2 像素。这个值可以是正数或负数，用于微调行间距。
 adjust-cell-height = 2
 # --- Theme and Colors ---
-theme = Catppuccin Mocha
+# theme = Catppuccin Mocha
+theme = GitHub-Dark-Default
 # --- Window and Appearance ---
-background-opacity = 0.85
+background-opacity = 0.5
 # 作用：设置背景模糊半径（仅 macOS 支持）。当背景透明时，模糊可以使背景内容柔和，避免干扰文字。取值范围通常为 0~50，30 表示中等程度的模糊。
 background-blur-radius = 30
 # 仅 macOS 有效，设置标题栏样式为 transparent（透明）。其他可选值包括 hidden（隐藏标题栏和按钮）、tabs（标签页集成到标题栏）等。这里选择透明，可以保留交通灯按钮但背景与窗口融合。
-macos-titlebar-style = transparent
+macos-titlebar-style = hidden
 # 设置窗口内容与左右边框的水平内边距为 10 像素。避免文字紧贴窗口边缘。
 window-padding-x = 10
 # 设置窗口内容与上下边框的垂直内边距为 8 像素
@@ -19,11 +20,11 @@ window-save-state = always
 window-theme = auto
 # --- Cursor ---
 # 设置光标样式为竖线（bar）。其他常见样式有 block（方块）、underline（下划线）。
-cursor-style = bar
+cursor-style = underline
 # 启用光标闪烁。true 表示光标会按一定频率闪烁，false 则静止。
 cursor-style-blink = true
 # 设置光标透明度为 0.8（取值范围 0.0~1.0）。当光标为方块样式时，透明度效果明显；对于竖线，可能效果不明显，但可以微调。
-cursor-opacity = 0.8
+cursor-opacity = 1
 
 # --- Mouse ---
 # 当用户开始打字时自动隐藏鼠标指针，避免遮挡视线。停止打字或移动鼠标时指针重新出现。
@@ -64,6 +65,12 @@ keybind = cmd+shift+enter=toggle_split_zoom
 keybind = cmd+shift+f=toggle_split_zoom
 
 keybind = cmd+shift+,=reload_config
+# 自定义分屏焦点切换 (Vim 风格)
+keybind = alt+h=goto_split:left
+keybind = alt+j=goto_split:bottom
+keybind = alt+k=goto_split:top
+keybind = alt+l=goto_split:right
+keybind = cmd+c=copy_to_clipboard
 
 # window-decoration = none
 # gtk-titlebar = false
