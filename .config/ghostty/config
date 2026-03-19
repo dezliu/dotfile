@@ -57,12 +57,13 @@ shell-integration = zsh
 scrollback-limit = 25000000
 
 # --- 基础分屏（左右添加屏幕）---
-# 绑定快捷键 Cmd+D 来创建一个新的分屏，并放置在当前分屏的右侧。new_split:right 表示新建分屏且位于右侧。其他方向：left、up、down。
-keybind = cmd+d=new_split:right
-# 绑定 Cmd+Shift+Enter 来切换当前分屏的缩放状态（即让当前分屏全屏，隐藏其他分屏）。再次按下恢复。
-keybind = cmd+shift+enter=toggle_split_zoom
-# 绑定 Cmd+Shift+F 也执行同样的分屏缩放切换操作。这为用户提供了另一个快捷键选择，可能更方便记忆（F 代表 Fullscreen）。
-keybind = cmd+shift+f=toggle_split_zoom
+# 绑定快捷键 alt+D 来创建一个新的分屏，并放置在当前分屏的右侧。new_split:right 表示新建分屏且位于右侧。其他方向：left、up、down。
+keybind = alt+d=new_split:right
+keybind = alt+shift+d=new_split:down
+# 绑定alt+Enter 来切换当前分屏的缩放状态（即让当前分屏全屏，隐藏其他分屏）。再次按下恢复。
+keybind = alt+enter=toggle_split_zoom
+# 绑定 alt+F 也执行同样的分屏缩放切换操作。这为用户提供了另一个快捷键选择，可能更方便记忆（F 代表 Fullscreen）。
+keybind = alt+f=toggle_split_zoom
 
 keybind = global:cmd+grave_accent=toggle_quick_terminal
 
@@ -73,6 +74,8 @@ keybind = alt+j=goto_split:bottom
 keybind = alt+k=goto_split:top
 keybind = alt+l=goto_split:right
 keybind = cmd+c=copy_to_clipboard
+# 关闭当前分屏/标签页
+keybind = alt+w=close_surface
 
 # window-decoration = none
 # gtk-titlebar = false
