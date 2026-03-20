@@ -1,0 +1,161 @@
+{
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "manipulators": [
+                            {
+                                "description": "Change right_command to command+control+option+shift.",
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }, {
+                        "description": "Maccy: Alt+1-9 -> Cmd+1-9",
+                        "manipulators": [
+                        {
+                            "type": "basic",
+                            "from": {
+                            "key_code": "1",
+                            "modifiers": { "mandatory": ["option"] }
+                            },
+                            "to": [{ "key_code": "1", "modifiers": ["command"] }],
+                            "conditions": [
+                            {
+                                "type": "frontmost_application_if",
+                                "bundle_identifiers": ["^com\\.instabledesign\\.Maccy$"]
+                            }
+                            ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": {
+                            "key_code": "2",
+                            "modifiers": { "mandatory": ["option"] }
+                            },
+                            "to": [{ "key_code": "2", "modifiers": ["command"] }],
+                            "conditions": [
+                            {
+                                "type": "frontmost_application_if",
+                                "bundle_identifiers": ["^com\\.instabledesign\\.Maccy$"]
+                            }
+                            ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": {
+                            "key_code": "3",
+                            "modifiers": { "mandatory": ["option"] }
+                            },
+                            "to": [{ "key_code": "3", "modifiers": ["command"] }],
+                            "conditions": [
+                            {
+                                "type": "frontmost_application_if",
+                                "bundle_identifiers": ["^com\\.instabledesign\\.Maccy$"]
+                            }
+                            ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": {
+                            "key_code": "4",
+                            "modifiers": { "mandatory": ["option"] }
+                            },
+                            "to": [{ "key_code": "4", "modifiers": ["command"] }],
+                            "conditions": [
+                            {
+                                "type": "frontmost_application_if",
+                                "bundle_identifiers": ["^com\\.instabledesign\\.Maccy$"]
+                            }
+                            ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": {
+                            "key_code": "5",
+                            "modifiers": { "mandatory": ["option"] }
+                            },
+                            "to": [{ "key_code": "5", "modifiers": ["command"] }],
+                            "conditions": [
+                            {
+                                "type": "frontmost_application_if",
+                                "bundle_identifiers": ["^com\\.instabledesign\\.Maccy$"]
+                            }
+                            ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": {
+                            "key_code": "6",
+                            "modifiers": { "mandatory": ["option"] }
+                            },
+                            "to": [{ "key_code": "6", "modifiers": ["command"] }],
+                            "conditions": [
+                            {
+                                "type": "frontmost_application_if",
+                                "bundle_identifiers": ["^com\\.instabledesign\\.Maccy$"]
+                            }
+                            ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": {
+                            "key_code": "7",
+                            "modifiers": { "mandatory": ["option"] }
+                            },
+                            "to": [{ "key_code": "7", "modifiers": ["command"] }],
+                            "conditions": [
+                            {
+                                "type": "frontmost_application_if",
+                                "bundle_identifiers": ["^com\\.instabledesign\\.Maccy$"]
+                            }
+                            ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": {
+                            "key_code": "8",
+                            "modifiers": { "mandatory": ["option"] }
+                            },
+                            "to": [{ "key_code": "8", "modifiers": ["command"] }],
+                            "conditions": [
+                            {
+                                "type": "frontmost_application_if",
+                                "bundle_identifiers": ["^com\\.instabledesign\\.Maccy$"]
+                            }
+                            ]
+                        },
+                        {
+                            "type": "basic",
+                            "from": {
+                            "key_code": "9",
+                            "modifiers": { "mandatory": ["option"] }
+                            },
+                            "to": [{ "key_code": "9", "modifiers": ["command"] }],
+                            "conditions": [
+                            {
+                                "type": "frontmost_application_if",
+                                "bundle_identifiers": ["^com\\.instabledesign\\.Maccy$"]
+                            }
+                            ]
+                        }
+                        ]
+                    }
+                ]
+            },
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        }
+    ]
+}
