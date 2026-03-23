@@ -2,10 +2,10 @@ font-size = 14
 # 调整单元格的高度。增加此值可以使行高变大，提升可读性。2 表示在默认行高的基础上额外增加 2 像素。这个值可以是正数或负数，用于微调行间距。
 adjust-cell-height = 2
 # --- Theme and Colors ---
-# theme = Catppuccin Mocha
-theme = GitHub Dark Colorblind
+# theme = GitHub Dark Colorblind
+theme = Catppuccin Mocha
 # --- Window and Appearance ---
-background-opacity = 0.5
+background-opacity = 0.7
 # 作用：设置背景模糊半径（仅 macOS 支持）。当背景透明时，模糊可以使背景内容柔和，避免干扰文字。取值范围通常为 0~50，30 表示中等程度的模糊。
 background-blur-radius = 30
 # 仅 macOS 有效，设置标题栏样式为 transparent（透明）。其他可选值包括 hidden（隐藏标题栏和按钮）、tabs（标签页集成到标题栏）等。这里选择透明，可以保留交通灯按钮但背景与窗口融合。
@@ -74,6 +74,14 @@ keybind = alt+j=goto_split:bottom
 keybind = alt+k=goto_split:top
 keybind = alt+l=goto_split:right
 keybind = cmd+c=copy_to_clipboard
+
+# 使用 hjkl 调整分屏大小（Vim 风格）
+# h → 左，j → 下，k → 上，l → 右
+keybind = ctrl+alt+h=resize_split:left,10
+keybind = ctrl+alt+j=resize_split:down,10
+keybind = ctrl+alt+k=resize_split:up,10
+keybind = ctrl+alt+l=resize_split:right,10
+
 # 关闭当前分屏/标签页
 keybind = alt+w=close_surface
 
