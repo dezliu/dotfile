@@ -1,0 +1,3 @@
+patch:
+  style:
+    inline_preedit: false # 嵌入编码模式，改为true可开启

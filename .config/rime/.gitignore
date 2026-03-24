@@ -1,0 +1,7 @@
+/build/
+/rime_ice.userdb/
+/luna_pinyin.userdb/
+/easy_english.userdb/
+/sync/
+user.yaml
+.DS_Store
