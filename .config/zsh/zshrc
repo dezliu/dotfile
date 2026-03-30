@@ -133,6 +133,7 @@ cdf() {
     fi
 }
 alias cppwd="pwd | pbcopy"
+alias watcham="watch -c -n 1 env CLICOLOR_FORCE=1 am now"
 
 # Jdk
 export JAVA_HOME=/usr/local/zulu8.90.0.19-ca-jdk8.0.472-macosx_aarch64
@@ -147,3 +148,22 @@ source .fzf.zsh
 set -o vi
 
 alias lg="lazygit"
+
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+source $HOME/.cargo/env
+
+# fnm
+eval "$(fnm env --use-on-cd)"
+
+. "$HOME/.local/bin/env"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Mole shell completion
+if output="$(mole completion zsh 2>/dev/null)"; then eval "$output"; fi
