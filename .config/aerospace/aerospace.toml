@@ -364,9 +364,9 @@ run = "move-node-to-workspace 4"
 if.app-id = 'com.ScooterSoftware.BeyondCompare'
 run = "move-node-to-workspace 4"
 
-[[on-window-detected]]
-if.app-id = 'com.tencent.xinWeChat'
-run = "move-node-to-workspace 5"
+# [[on-window-detected]]
+# if.app-id = 'com.tencent.xinWeChat'
+# run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = 'com.parallels.desktop.console'
