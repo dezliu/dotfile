@@ -7,9 +7,17 @@ set number
  
 " 制表符宽度为 4 个空格
 set tabstop=4
+set shiftwidth=4
+
+" 在插入模式下按 Tab 时，自动使用空格
+set softtabstop=4
  
 " 自动缩进 - 写代码时自动保持正确的缩进
 set autoindent
+
+" 启用自动缩进
+set autoindent
+set smartindent   " 可选：智能缩进（C 风格）
  
 " 启用鼠标支持 - 可以用鼠标选择、滚动等
 set mouse=a
