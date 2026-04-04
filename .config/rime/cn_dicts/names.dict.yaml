@@ -1,0 +1,17 @@
+---
+name: names
+version: "1.0"
+sort: by_weight
+use_preset_vocabulary: false
+columns:
+  - text
+  - code
+  - weight
+...
+郭闪闪	guo shan shan	10000
+刘德智	liu de zhi	10000
+刘德慧	liu de hui	10000
+陈成	chen cheng 10000
+刘中军	liu zhong jun	10000
+李苑琴	li yuan qin	10000
+刘井夫	liu jing fu	10000
