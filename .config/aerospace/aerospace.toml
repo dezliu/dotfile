@@ -335,10 +335,15 @@ run = "move-node-to-workspace 0"
 if.app-id = 'dev.warp.Warp-Stable'
 run = "move-node-to-workspace 0"
 
+# cursor默认在桌面1打开，并启用手风琴垂直布局
+[[on-window-detected]]
+if.app-id = 'com.todesktop.230313mzl4w4u92'
+run = ['move-node-to-workspace 1', 'layout accordion vertical']
+
 # idea 默认在桌面2打开，并启用手风琴垂直布局
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.intellij'
-run = ['move-node-to-workspace 1', 'layout accordion vertical']
+run = ['move-node-to-workspace 2', 'layout accordion vertical']
 
 [[on-window-detected]]
 if.app-id = 'com.microsoft.VSCode'
@@ -364,9 +369,9 @@ run = "move-node-to-workspace 4"
 if.app-id = 'com.ScooterSoftware.BeyondCompare'
 run = "move-node-to-workspace 4"
 
-# [[on-window-detected]]
-# if.app-id = 'com.tencent.xinWeChat'
-# run = "move-node-to-workspace 5"
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.datagrip'
+run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = 'com.parallels.desktop.console'
@@ -374,11 +379,12 @@ run = "move-node-to-workspace 6"
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Safari'
-run = ['move-node-to-workspace 7', 'layout accordion vertical']
+run = ['move-node-to-workspace 7']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.iBooksX'
-run = ['move-node-to-workspace 7', 'layout accordion vertical']
+# run = ['move-node-to-workspace 7', 'layout accordion vertical']
+run = ['move-node-to-workspace 7']
 
 [[on-window-detected]]
 if.app-id = 'com.apple.Music'
@@ -449,7 +455,7 @@ run = 'layout accordion vertical'
 
 [[on-window-detected]]
 if.workspace = '7'
-run = 'layout accordion vertical'
+run = 'layout tiles horizontal'
 
 [[on-window-detected]]
 if.workspace = 'B'

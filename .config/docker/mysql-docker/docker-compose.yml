@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    container_name: my_mysql
+    platform: linux/arm64
+    environment:
+      MYSQL_DATABASE: "my_database"
+      MYSQL_USER: "dezliu"
+      MYSQL_PASSWORD: "dezliu"
+      MYSQL_ROOT_PASSWORD: "123456"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db-data:/var/lib/mysql
