@@ -133,8 +133,37 @@ cdf() {
     fi
 }
 alias cppwd="pwd | pbcopy"
-# brew install watch & cargo install am
-alias watcham="watch -c -n 1 env CLICOLOR_FORCE=1 am now"
+# brew install lsd
+# alias ll="lsd -l"
+# alias la="lsd -la"
+alias wa="watch -c -n 1 env CLICOLOR_FORCE=1 am now"
+watcham() {
+  local old_stty=$(stty -g)
+  stty -echo -icanon time 0 min 0
+  trap 'printf "\033[?25h"; stty "$old_stty"; echo; return' INT TERM EXIT
+
+  printf "\033[?25l"      # 隐藏光标，减少闪烁
+
+  while true; do
+    printf "\033[H"       # 光标移到左上角（不擦除屏幕）
+    env CLICOLOR_FORCE=1 am now
+    printf "\033[J"       # 清除从光标到屏幕尾部（防止残留旧内容）
+
+    if read -t 0.1 -k 1 key; then
+      case $key in
+        n) am next ;;
+        b) am back ;;
+        p) am toggle ;;
+        q) break ;;
+      esac
+    fi
+    sleep 1
+  done
+
+  printf "\033[?25h"      # 恢复光标
+  stty "$old_stty"
+  trap - INT TERM EXIT
+}
 
 # Jdk
 export JAVA_HOME=/usr/local/zulu8.90.0.19-ca-jdk8.0.472-macosx_aarch64
@@ -145,7 +174,7 @@ export M2_HOME=/usr/local/apache-maven-3.9.11
 export MAVEN_HOME=$M2_HOME
 export PATH=$MAVEN_HOME/bin:$PATH
 
-source .fzf.zsh
+# source .fzf.zsh
 set -o vi
 
 alias lg="lazygit"
@@ -168,3 +197,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Mole shell completion
 if output="$(mole completion zsh 2>/dev/null)"; then eval "$output"; fi
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
