@@ -15,7 +15,7 @@ after-startup-command = [
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
     # 'exec-and-forget borders active_color=0xffe1e3e4 width=5.0'
-    'exec-and-forget borders active_color=0xffeff0f0 width=6.0'
+    # 'exec-and-forget borders active_color=0xffeff0f0 width=6.0'
 ]
 
 # Start AeroSpace at login
@@ -83,12 +83,12 @@ on-mode-changed = []
 #                 https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 # 窗口间距配置
 [gaps]
-    inner.horizontal = 9
-    inner.vertical =   9
-    outer.left =       9
-    outer.bottom =     9
-    outer.top =        9
-    outer.right =      9
+    inner.horizontal = 16
+    inner.vertical =   16
+    outer.left =       16
+    outer.bottom =     16
+    outer.top =        16
+    outer.right =      16
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
