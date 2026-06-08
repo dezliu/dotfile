@@ -354,20 +354,20 @@ if.app-id = 'com.coteditor.CotEditor'
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.Excel'
-run = "move-node-to-workspace 4"
-
-[[on-window-detected]]
-if.app-id = 'com.microsoft.Word'
-run = "move-node-to-workspace 4"
-
-[[on-window-detected]]
 if.app-id = 'abnerworks.Typora'
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.ScooterSoftware.BeyondCompare'
 run = "move-node-to-workspace 4"
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Excel'
+run = "move-node-to-workspace 5"
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Word'
+run = "move-node-to-workspace 5"
 
 [[on-window-detected]]
 if.app-id = 'com.jetbrains.datagrip'
