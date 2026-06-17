@@ -318,7 +318,7 @@ on-mode-changed = []
 [workspace-to-monitor-force-assignment]
     # 当只有一个外接显示器时，secondary，指的是非主显示器，这里是把 workspace [0, 9, B] 默认分配给外接显示器
     0 = 'secondary'
-    9 = 'secondary'
+    9 = 'main'
     B = 'secondary'
 
 # 配置指定软件打开在指定工作空间
@@ -391,6 +391,10 @@ if.app-id = 'com.apple.Music'
 run = "move-node-to-workspace 8"
 
 [[on-window-detected]]
+if.app-id = 'com.tencent.xinWeChat'
+run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
 if.app-id = 'com.microsoft.edgemac'
 run = ['move-node-to-workspace E', 'layout accordion vertical']
 
@@ -399,9 +403,9 @@ if.app-id = 'org.mozilla.firefox'
 run = ['move-node-to-workspace B', 'layout accordion vertical']
 
 # 配置指定软件浮动
-[[on-window-detected]]
-if.app-id = 'com.tencent.xinWeChat'
-run = "layout floating"
+# [[on-window-detected]]
+# if.app-id = 'com.tencent.xinWeChat'
+# run = "layout floating"
 
 [[on-window-detected]]
 if.app-id = 'com.valvesoftware.steam'
