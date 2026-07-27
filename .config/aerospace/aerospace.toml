@@ -73,8 +73,12 @@ on-window-detected = [
         run = ['move-node-to-workspace 1', 'layout accordion vertical'], # mnemonics 1 accordion - Cursor
     },
     {
+        if = 'test %{app-bundle-id} = com.openai.codex',
+        run = ['move-node-to-workspace 2', 'layout accordion vertical'], # mnemonics 1 accordion - Cursor
+    },
+    {
         if = 'test %{app-bundle-id} = com.jetbrains.intellij',
-        run = ['move-node-to-workspace 2', 'layout accordion vertical'], # mnemonics 2 accordion - Idea
+        run = ['move-node-to-workspace 3', 'layout accordion vertical'], # mnemonics 2 accordion - Idea
     },
     {
         if = 'test %{app-bundle-id} = com.microsoft.VSCode || test %{app-bundle-id} = com.coteditor.CotEditor || test %{app-bundle-id} = abnerworks.Typora || test %{app-bundle-id} = com.ScooterSoftware.BeyondCompare',
@@ -97,7 +101,7 @@ on-window-detected = [
         run = 'move-node-to-workspace 8', # mnemonics 8 - Music
     },
     {
-        if = 'test %{app-bundle-id} = com.tencent.xinWeChat',
+        if = 'test %{app-bundle-id} = com.tencent.xinWeChat || test %{app-bundle-id} = zbox-lite',
         run = 'move-node-to-workspace 9', # mnemonics 9 - Wechat
     },
     {
