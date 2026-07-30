@@ -324,7 +324,7 @@ key-mapping.preset = 'qwerty'
     cmd-j = ['join-with down', 'mode main']
     cmd-k = ['join-with up', 'mode main']
     cmd-l = ['join-with right', 'mode main']
-    cmd-r = ['exec-and-forget pkill caffeinate || true && pmset displaysleepnow && caffeinate -s', 'mode main']
+    cmd-r = 'exec-and-forget pkill caffeinate || true && pmset displaysleepnow && caffeinate -s; sleep 0.3 ; aerospace mode main --no-auto-focus'
     cmd-x = ['exec-and-forget pkill caffeinate ; osascript -e "display notification \"已成功关闭 caffeinate\" with title \"AeroSpace\""', 'mode main']
 
 [mode.volume.binding]
